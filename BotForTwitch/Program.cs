@@ -15,9 +15,6 @@ namespace BotForTwitch {
             Application.SetCompatibleTextRenderingDefault(false);
 
 			if (confcol["username"].Value.Equals("") || confcol["password"].Value.Equals("")) {
-				// Open setup dialog box
-				// SetupForm setupForm = new SetupForm();
-				// setupForm.ShowDialog();
 				FirstTimeForm firstTimeForm = new FirstTimeForm();
 				firstTimeForm.ShowDialog();
 			}
