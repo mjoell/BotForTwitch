@@ -10,6 +10,7 @@ namespace BotForTwitch {
         public static Configuration cm = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
         public static KeyValueConfigurationCollection confcol = cm.AppSettings.Settings;
 
+		[STAThread]
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

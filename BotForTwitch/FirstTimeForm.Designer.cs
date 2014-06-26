@@ -27,10 +27,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.usernameBox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.passwordBox = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.saveButton = new System.Windows.Forms.Button();
 			this.exitButton = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.getPasswordButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -60,23 +60,6 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Username:";
 			// 
-			// passwordBox
-			// 
-			this.passwordBox.Location = new System.Drawing.Point(152, 92);
-			this.passwordBox.Name = "passwordBox";
-			this.passwordBox.PasswordChar = '*';
-			this.passwordBox.Size = new System.Drawing.Size(100, 20);
-			this.passwordBox.TabIndex = 3;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(152, 73);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(56, 13);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Password:";
-			// 
 			// saveButton
 			// 
 			this.saveButton.Location = new System.Drawing.Point(536, 442);
@@ -97,20 +80,39 @@
 			this.exitButton.UseVisualStyleBackColor = true;
 			this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(152, 73);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(56, 13);
+			this.label3.TabIndex = 4;
+			this.label3.Text = "Password:";
+			// 
+			// getPasswordButton
+			// 
+			this.getPasswordButton.Location = new System.Drawing.Point(155, 89);
+			this.getPasswordButton.Name = "getPasswordButton";
+			this.getPasswordButton.Size = new System.Drawing.Size(100, 24);
+			this.getPasswordButton.TabIndex = 7;
+			this.getPasswordButton.Text = "Get Password";
+			this.getPasswordButton.UseVisualStyleBackColor = true;
+			this.getPasswordButton.Click += new System.EventHandler(this.getPasswordButton_Click);
+			// 
 			// FirstTimeForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(658, 477);
+			this.ControlBox = false;
+			this.Controls.Add(this.getPasswordButton);
 			this.Controls.Add(this.exitButton);
 			this.Controls.Add(this.saveButton);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.passwordBox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.usernameBox);
 			this.Controls.Add(this.label1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.ControlBox = false;
 			this.Name = "FirstTimeForm";
 			this.Text = "Bot For Twitch - First Time Setup";
 			this.Load += new System.EventHandler(this.FirstTimeForm_Load);
@@ -124,9 +126,9 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox usernameBox;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox passwordBox;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button saveButton;
 		private System.Windows.Forms.Button exitButton;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Button getPasswordButton;
 	}
 }

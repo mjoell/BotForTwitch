@@ -21,14 +21,14 @@ namespace BotForTwitch {
 		}
 
 		private void saveButton_Click(object sender, EventArgs e) {
-			string[] settings = new string[] { usernameBox.Text, passwordBox.Text };
+			string[] settings = new string[] { usernameBox.Text };
 
 			for (int i = 0; i < settings.Length; i++) {
 				if (settings[i].Equals("")) {
 					MessageBox.Show("You have not completed all fields.  Please complete all fields before continuing.");
 					return;
 				} else {
-					string[] settingLabels = new string[] { "username", "password" };
+					string[] settingLabels = new string[] { "username" };
 					Program.confcol[settingLabels[i]].Value = settings[i];
 					Program.cm.Save(ConfigurationSaveMode.Modified);
 					ConfigurationManager.RefreshSection(Program.cm.AppSettings.SectionInformation.Name);
@@ -41,6 +41,11 @@ namespace BotForTwitch {
 
 		private void exitButton_Click(object sender, EventArgs e) {
 			Process.GetCurrentProcess().Kill();
+		}
+
+		private void getPasswordButton_Click(object sender, EventArgs e) {
+			OAuthForm oAuthForm = new OAuthForm();
+			oAuthForm.ShowDialog();
 		}
 	}
 }
