@@ -31,6 +31,9 @@
 			this.exitButton = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.getPasswordButton = new System.Windows.Forms.Button();
+			this.passwordBox = new System.Windows.Forms.TextBox();
+			this.commandPrefixLabel = new System.Windows.Forms.Label();
+			this.commandPrefixBox = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -54,7 +57,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(15, 74);
+			this.label2.Location = new System.Drawing.Point(12, 73);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(58, 13);
 			this.label2.TabIndex = 2;
@@ -91,13 +94,37 @@
 			// 
 			// getPasswordButton
 			// 
-			this.getPasswordButton.Location = new System.Drawing.Point(155, 89);
+			this.getPasswordButton.Location = new System.Drawing.Point(12, 442);
 			this.getPasswordButton.Name = "getPasswordButton";
-			this.getPasswordButton.Size = new System.Drawing.Size(100, 24);
+			this.getPasswordButton.Size = new System.Drawing.Size(128, 24);
 			this.getPasswordButton.TabIndex = 7;
-			this.getPasswordButton.Text = "Get Password";
+			this.getPasswordButton.Text = "Get OAuth Password";
 			this.getPasswordButton.UseVisualStyleBackColor = true;
 			this.getPasswordButton.Click += new System.EventHandler(this.getPasswordButton_Click);
+			// 
+			// passwordBox
+			// 
+			this.passwordBox.Location = new System.Drawing.Point(155, 93);
+			this.passwordBox.Name = "passwordBox";
+			this.passwordBox.PasswordChar = '*';
+			this.passwordBox.Size = new System.Drawing.Size(100, 20);
+			this.passwordBox.TabIndex = 8;
+			// 
+			// commandPrefixLabel
+			// 
+			this.commandPrefixLabel.AutoSize = true;
+			this.commandPrefixLabel.Location = new System.Drawing.Point(295, 73);
+			this.commandPrefixLabel.Name = "commandPrefixLabel";
+			this.commandPrefixLabel.Size = new System.Drawing.Size(113, 13);
+			this.commandPrefixLabel.TabIndex = 9;
+			this.commandPrefixLabel.Text = "Command Prefix (Ex: !)";
+			// 
+			// commandPrefixBox
+			// 
+			this.commandPrefixBox.Location = new System.Drawing.Point(298, 93);
+			this.commandPrefixBox.Name = "commandPrefixBox";
+			this.commandPrefixBox.Size = new System.Drawing.Size(100, 20);
+			this.commandPrefixBox.TabIndex = 10;
 			// 
 			// FirstTimeForm
 			// 
@@ -105,6 +132,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(658, 477);
 			this.ControlBox = false;
+			this.Controls.Add(this.commandPrefixBox);
+			this.Controls.Add(this.commandPrefixLabel);
+			this.Controls.Add(this.passwordBox);
 			this.Controls.Add(this.getPasswordButton);
 			this.Controls.Add(this.exitButton);
 			this.Controls.Add(this.saveButton);
@@ -130,5 +160,8 @@
 		private System.Windows.Forms.Button exitButton;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button getPasswordButton;
+		private System.Windows.Forms.TextBox passwordBox;
+		private System.Windows.Forms.Label commandPrefixLabel;
+		private System.Windows.Forms.TextBox commandPrefixBox;
 	}
 }

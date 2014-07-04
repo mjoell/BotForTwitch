@@ -21,14 +21,14 @@ namespace BotForTwitch {
 		}
 
 		private void saveButton_Click(object sender, EventArgs e) {
-			string[] settings = new string[] { usernameBox.Text };
+			string[] settings = new string[] { usernameBox.Text, passwordBox.Text, commandPrefixBox.Text };
 
 			for (int i = 0; i < settings.Length; i++) {
 				if (settings[i].Equals("")) {
 					MessageBox.Show("You have not completed all fields.  Please complete all fields before continuing.");
 					return;
 				} else {
-					string[] settingLabels = new string[] { "username" };
+					string[] settingLabels = new string[] { "username","password", "prefix" };
 					Program.confcol[settingLabels[i]].Value = settings[i];
 					Program.cm.Save(ConfigurationSaveMode.Modified);
 					ConfigurationManager.RefreshSection(Program.cm.AppSettings.SectionInformation.Name);

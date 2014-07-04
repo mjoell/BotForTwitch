@@ -13,19 +13,37 @@ using System.Windows.Forms;
 namespace BotForTwitch {
 	public partial class OAuthForm : Form {
 		public OAuthForm() {
-			HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create("http://botfortwitch.tv/oauth.php");
-			webRequest.MaximumAutomaticRedirections = 1;
-			webRequest.AllowAutoRedirect = true;
-			string response1;
+			string url = "";
+			Boolean open = true;
 
-			using (var response = webRequest.GetResponse()) using (var content = response.GetResponseStream()) using (var reader = new StreamReader(content)) {
-				response1 = response.ResponseUri.ToString();
-				if (reader.ReadToEnd().Contains("Authorize Bot for Twitch")) {
-					InitializeComponent();
+			BackgroundWorker backgroundWorker = new BackgroundWorker();
+			backgroundWorker.DoWork += (DoWorkEventHandler)((o, args) => {
+				while (open == true) {
+					if (this.webBrowser1.Url == null) {
+					} else {
+						url = this.webBrowser1.Url.ToString();
+					}
+
+					if (url.Contains("code=")) {
+						open = false;
+
+						string password = this.webBrowser1.DocumentTitle;
+
+						Clipboard.SetText(password);
+
+						MessageBox.Show("Password coppied to clipboard.  Please insert it into the password field.");
+
+						this.Close();
+					}
+
+					MessageBox.Show("dfdfd");
 				}
-			}
+			});
+			backgroundWorker.RunWorkerAsync();
 
 			InitializeComponent();
+
+			MessageBox.Show(this.webBrowser1.DocumentTitle);
 		}
 	}
 }

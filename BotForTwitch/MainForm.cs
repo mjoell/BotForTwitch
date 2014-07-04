@@ -18,5 +18,18 @@ namespace BotForTwitch {
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog();
         }
+
+		public void connect() {
+			// Connect to IRC server for Twitch
+		}
+
+		public void disconnect() {
+			// Disconnect from Twitch server
+		}
+
+		public void send(string channel, string message) {
+			// Send message to IRC server
+			channel = "#" + channel;
+		}
     }
 }

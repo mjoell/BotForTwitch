@@ -32,7 +32,7 @@
 			this.webBrowser1.Location = new System.Drawing.Point(0, 0);
 			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
 			this.webBrowser1.Name = "webBrowser1";
-			this.webBrowser1.Size = new System.Drawing.Size(1127, 539);
+			this.webBrowser1.Size = new System.Drawing.Size(698, 403);
 			this.webBrowser1.TabIndex = 0;
 			this.webBrowser1.Url = new System.Uri("http://botfortwitch.tv/oauth.php", System.UriKind.Absolute);
 			// 
@@ -40,7 +40,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1127, 539);
+			this.ClientSize = new System.Drawing.Size(698, 403);
 			this.Controls.Add(this.webBrowser1);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
